@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    </head>
+    <body>
+        <a-scene stats loading-screen="dotsColor: gray; backgroundColor: lightgray">
+            <a-camera position="0 3 7">
+                <a-entity cursor="fuse: true; fuseTimeout: 100"
+                    position="0 0 -1"
+                    geometry="primitive: ring"
+                    scale="0.02 0.02 0.02"
+                    material="color: black; shader: flat">
+                    <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" fill="none" from="0.03 0.03 0.03" to="0.001 0.001 0.001"></a-animation>
+                </a-entity>
+            </a-camera>
+            <a-sky color="#ECECEC"></a-sky>
+            <a-text imd-mover position="-2 5 0" value="MOVE" color="black" scale="5 5 5"></a-text>
+            <a-text spd-up position="2 5 0" value="spdUP" color="black" scale="5 5 5"></a-text>
+            <a-text spd-down position="-8 5 0" value="spdDOWN" color="black" scale="5 5 5"></a-text>
+            <a-text color-change position="-4 2 0" value="mono/color" color="black" scale="5 5 5"></a-text>
+            <a-text position="-10 11 0" value="MAX: 60seconds, MIN: 0.5seconds" color="black" scale="5 5 5"></a-text>
+            <a-entity environment="preset: default;"></a-entity>
+        </a-scene>
+        <script src="main.js"></script>
+    </body>
+</html>
